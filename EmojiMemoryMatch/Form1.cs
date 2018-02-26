@@ -18,7 +18,7 @@ namespace EmojiMemoryMatch
         PictureBox firstGuess;
         Random rnd = new Random();
         Timer clickTimer = new Timer();
-        int time = 60;
+        int time = 100;
         Timer timer = new Timer { Interval = 1000 };    // create a timer that 'ticks' every second
 
         public Form1()
@@ -84,7 +84,7 @@ namespace EmojiMemoryMatch
 
             HideImages();
             setRandomImages();
-            time = 60;
+            time = 100;
             timer.Start();
         }
 
