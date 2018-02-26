@@ -1,0 +1,9 @@
+C:\Users\joelr_000\MTSU\CSCI_3037\CSCI_3037_OLA2_EmojiMemoryMatch\EmojiMemoryMatch\bin\Debug\EmojiMemoryMatch.exe.config
+C:\Users\joelr_000\MTSU\CSCI_3037\CSCI_3037_OLA2_EmojiMemoryMatch\EmojiMemoryMatch\bin\Debug\EmojiMemoryMatch.exe
+C:\Users\joelr_000\MTSU\CSCI_3037\CSCI_3037_OLA2_EmojiMemoryMatch\EmojiMemoryMatch\bin\Debug\EmojiMemoryMatch.pdb
+C:\Users\joelr_000\MTSU\CSCI_3037\CSCI_3037_OLA2_EmojiMemoryMatch\EmojiMemoryMatch\obj\Debug\EmojiMemoryMatch.csprojResolveAssemblyReference.cache
+C:\Users\joelr_000\MTSU\CSCI_3037\CSCI_3037_OLA2_EmojiMemoryMatch\EmojiMemoryMatch\obj\Debug\EmojiMemoryMatch.Form1.resources
+C:\Users\joelr_000\MTSU\CSCI_3037\CSCI_3037_OLA2_EmojiMemoryMatch\EmojiMemoryMatch\obj\Debug\EmojiMemoryMatch.Properties.Resources.resources
+C:\Users\joelr_000\MTSU\CSCI_3037\CSCI_3037_OLA2_EmojiMemoryMatch\EmojiMemoryMatch\obj\Debug\EmojiMemoryMatch.csproj.GenerateResource.Cache
+C:\Users\joelr_000\MTSU\CSCI_3037\CSCI_3037_OLA2_EmojiMemoryMatch\EmojiMemoryMatch\obj\Debug\EmojiMemoryMatch.exe
+C:\Users\joelr_000\MTSU\CSCI_3037\CSCI_3037_OLA2_EmojiMemoryMatch\EmojiMemoryMatch\obj\Debug\EmojiMemoryMatch.pdb
