@@ -46,6 +46,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
@@ -80,9 +81,9 @@
             this.label1.Font = new System.Drawing.Font("Courier New", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(112, 584);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 17);
+            this.label1.Size = new System.Drawing.Size(80, 17);
             this.label1.TabIndex = 1;
-            this.label1.Text = "00:90";
+            this.label1.Text = "00:00:00";
             // 
             // pictureBox13
             // 
@@ -244,11 +245,22 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.clickImage);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(212, 582);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(193, 23);
+            this.button2.TabIndex = 18;
+            this.button2.Text = "Play New Game";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.playNewGameClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(419, 614);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox13);
             this.Controls.Add(this.pictureBox14);
             this.Controls.Add(this.pictureBox15);
@@ -312,6 +324,7 @@
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.PictureBox pictureBox16;
+        private System.Windows.Forms.Button button2;
     }
 }
 

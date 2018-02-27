@@ -15,11 +15,17 @@ namespace EmojiMemoryMatch
 
         // properties of our Form1 class
         bool allowClick = false;
-        PictureBox firstGuess;
         Random rnd = new Random();
         Timer clickTimer = new Timer();
-        int time = 100;
+        int time = 0;
         Timer timer = new Timer { Interval = 1000 };    // create a timer that 'ticks' every second
+
+        PictureBox firstGuess;
+        PictureBox pic1;
+        PictureBox pic2;
+
+        int winCount = 8;   // numer of matches required to win
+        int matchCount = 0; // count the number of matches!
 
         public Form1()
         {
@@ -59,6 +65,11 @@ namespace EmojiMemoryMatch
             timer.Start();
             timer.Tick += delegate
             {
+                time++;
+                /*
+                // our version doesn't count down till you lose, 
+                // it counts up!
+
                 time--;
                 if (time < 0)
                 {
@@ -66,10 +77,12 @@ namespace EmojiMemoryMatch
                     MessageBox.Show("Out of Time");
                     ResetImages();
                 }
+                */
 
                 var ssTime = TimeSpan.FromSeconds(time);
 
-                label1.Text = "00: " + time.ToString();
+                //label1.Text = "00: " + time.ToString();
+                label1.Text = string.Format("{0:HH:mm:ss}", ssTime.ToString());
             };
         }
 
@@ -84,7 +97,7 @@ namespace EmojiMemoryMatch
 
             HideImages();
             setRandomImages();
-            time = 100;
+            time = 0;
             timer.Start();
         }
 
@@ -120,7 +133,10 @@ namespace EmojiMemoryMatch
 
         private void CLICKTIMER_TICK(object sender, EventArgs e)
         {
-            HideImages();
+            //HideImages();
+            // hide the two clicked images instead of all of them
+            pic1.Image = Properties.Resources.question;
+            pic2.Image = Properties.Resources.question;
 
             allowClick = true;
             clickTimer.Stop();
@@ -131,6 +147,15 @@ namespace EmojiMemoryMatch
             if (!allowClick) return;
 
             var pic = (PictureBox)sender;
+
+            // we need to check if it's a card that's already been flipped
+            // and do nothing if it's already a matched card
+            //if (pic.Image != Properties.Resources.question) return;
+
+            // using class props so the clickTimer event handler 
+            // knows which two cards to flip back over
+            pic1 = firstGuess;
+            pic2 = pic;
             
             if (firstGuess == null)
             {
@@ -139,26 +164,41 @@ namespace EmojiMemoryMatch
                 return;
             }
 
+            // this is the pic flip, 
+            // the actual image is stored in the pic.tag
             pic.Image = (Image)pic.Tag;
 
+            // if you get a match
             if (pic.Image == firstGuess.Image && pic != firstGuess)
             {
+                //MessageBox.Show("YOU GOT A MATCH YAYA");
+                /*
                 pic.Visible = firstGuess.Visible = false;
                 {
                     firstGuess = pic;
                 }
                 HideImages();
+                */
+                matchCount++;
             }
+            // else it's not a match, start the clickTimer
+            // let the user look at it then flip those two back over. 
             else
             {
+                //MessageBox.Show("YOU SUCK");
                 allowClick = false;
                 clickTimer.Start();
             }
 
             firstGuess = null;
-            if (pictureBoxes.Any(p => p.Visible)) return;
-            MessageBox.Show("YOU WIN!", "Now Try Again!");
-            ResetImages();
+
+            //if (pictureBoxes.Any(p => p.Visible)) return;
+            if (matchCount == winCount)
+            {
+                MessageBox.Show("Congratulations! Now try again!", "YOU WIN!");
+                ResetImages();
+                matchCount = 0;
+            }
 
         }
 
@@ -171,6 +211,21 @@ namespace EmojiMemoryMatch
             clickTimer.Interval = 1000;
             clickTimer.Tick += CLICKTIMER_TICK;
             button1.Enabled = false;
+
+        }
+
+        private void playNewGameClick(object sender, EventArgs e)
+        {
+            allowClick = true;
+            /*
+            timer.Stop();
+            timer.Start();
+            */
+            //startGameTimer();
+
+            ResetImages();
+            
+            label1.Text = "00:00:00";
 
         }
     }
